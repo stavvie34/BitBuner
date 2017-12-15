@@ -1,4 +1,3 @@
-//Works for 2 ports
 hosts = ['foodnstuff', 'sigma-cosmetics', 'joesguns', 'nectar-net', 'hong-fang-tea', 'harakiri-sushi', 'neo-net', 'CSEC', 'zer0', 'max-hardware', 'iron-gym', 'phantasy', 'silver-helix', 'omega-net', 'avmnite-02h', 'crush-fitness', 'johnson-ortho', 'the-hub'];
 while(true) {
     for (i = 0; i < hosts.length; i = i + 1) {
@@ -17,22 +16,19 @@ while(true) {
                 sqlinject(host);
             nuke(host);
             print('nuked');
-			scp('hack-iron-gym.script', (host);
+			scp('hack-iron-gym.script', (host));
 			print('"Hack Iron-Gym" Script copied')
         };
         if (getHackingLevel() >= getServerRequiredHackingLevel(host)) {         
             if (getServerRam(host) == 8.00) {
-				exec('hack-iron-gym.script', hosts[i], 3, 'iron-gym');
-			}
-			if (getServerRam(host) == 16.00) {
-				exec('hack-iron-gym.script', hosts[i], 6, 'iron-gym');
-			}
-			if (getServerRam(host) == 32.00) {
-				exec('hack-iron-gym.script', hosts[i], 12, 'iron-gym');
-			}
-			if (getServerRam(host) == 64.00) {
-				exec('hack-iron-gym.script', hosts[i], 24, 'iron-gym');
-			}
-        };
+				exec('hack-iron-gym.script', host, 3, 'iron-gym');
+			} else if (getServerRam(host) == 16.00) {
+				exec('hack-iron-gym.script', host, 6, 'iron-gym');
+				} else if (getServerRam(host) == 32.00) {
+						exec('hack-iron-gym.script', host, 12, 'iron-gym');
+					} else if (getServerRam(host) == 64.00) {
+							exec('hack-iron-gym.script', host, 24, 'iron-gym');
+						};
+		};
     };
 };
