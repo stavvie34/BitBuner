@@ -28,7 +28,7 @@ while(true) {
         scp('hack-iron-gym.script', (host));
         tprint('"Hack Iron-Gym" Script copied');
         //Print how much ram is available on host
-        tprint(getServerRam(host)[0] + 'GB on ' + (host));
+        tprint(getServerRam(host)[0] + 'GB on' + '' + (host));
         //If your hacking level is greater or equal to what is needed to hack the host
         if (getHackingLevel() >= getServerRequiredHackingLevel(host)) {
 
