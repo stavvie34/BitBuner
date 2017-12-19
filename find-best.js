@@ -3,21 +3,24 @@ hosts = ['foodnstuff', 'sigma-cosmetics', 'joesguns', 'nectar-net', 'hong-fang-t
 
 for (i = 0; i < hosts.length; i = i + 1) {
     host = hosts[i];
-    svrWeakenTime = getWeakenTime(host);
+	
+    svrGrowth = getServerGrowth(host);
+	svrGrowTime = getGrowTime(host);
+	svrWeakenTime = getWeakenTime(host);
     svrHackTime = getHackTime(host);
-    svrGrowTime = getGrowTime(host);
     svrMinScrLvl = getServerMinSecurityLevel(host);
     svrMaxCash = getServerMaxMoney(host);
-	svrGrowth = getServerGrowth(host);
+	
     
-    tprint('There is ' + serverRam[0] + 'GB of RAM on ' + host);
+	tprint('--------------------------------------------------');
+	tprint('Working on ' + host);
+    tprint('---------- ' + host + ' has a Growth Rate of ' + svrGrowth);
+    tprint('---------- ' + 'It takes ' + (svrGrowTime) + ' seconds to Grow');
+	tprint('---------- ' + 'It takes ' + (svrWeakenTime) + ' seconds to Weaken');
+	tprint('---------- ' + 'It takes ' + (svrHackTime) + ' seconds to Hack');
+	tprint('---------- ' + host + ' has a minimum security level of ' + svrMinScrLvl);
+	tprint('---------- ' + host + ' can have a maximum of $' + svrMaxCash);
 }
 
-
-best = 
-lowest weaken time
-lowest hack time
-lowest grow time
-lowest minsecuritylevel
-greatest amount of max cash
-greatest growth parameter
+tprint('--------------------------------------------------');
+tprint('********** DONE **********');
