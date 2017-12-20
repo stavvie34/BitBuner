@@ -1,0 +1,146 @@
+--------------------------------------------------
+Working on foodnstuff
+---------- foodnstuff has a Growth Rate of 5
+---------- It takes 10.014264242227203 seconds to Grow
+---------- It takes 12.517830302784004 seconds to Weaken
+---------- It takes 3.129457575696001 seconds to Hack
+---------- foodnstuff has a minimum security level of 3
+---------- foodnstuff can have a maximum of $50000000
+--------------------------------------------------
+Working on sigma-cosmetics
+---------- sigma-cosmetics has a Growth Rate of 10
+---------- It takes 19.110798563107245 seconds to Grow
+---------- It takes 23.888498203884055 seconds to Weaken
+---------- It takes 5.972124550971014 seconds to Hack
+---------- sigma-cosmetics has a minimum security level of 3
+---------- sigma-cosmetics can have a maximum of $57500000
+--------------------------------------------------
+Working on joesguns
+---------- joesguns has a Growth Rate of 20
+---------- It takes 14.426046500042505 seconds to Grow
+---------- It takes 18.03255812505313 seconds to Weaken
+---------- It takes 4.508139531263282 seconds to Hack
+---------- joesguns has a minimum security level of 5
+---------- joesguns can have a maximum of $62500000
+--------------------------------------------------
+Working on nectar-net
+---------- nectar-net has a Growth Rate of 25
+---------- It takes 29.121956463311697 seconds to Grow
+---------- It takes 36.402445579139616 seconds to Weaken
+---------- It takes 9.100611394784904 seconds to Hack
+---------- nectar-net has a minimum security level of 7
+---------- nectar-net can have a maximum of $68750000
+--------------------------------------------------
+Working on hong-fang-tea
+---------- hong-fang-tea has a Growth Rate of 20
+---------- It takes 22.97528218578871 seconds to Grow
+---------- It takes 28.719102732235886 seconds to Weaken
+---------- It takes 7.179775683058971 seconds to Hack
+---------- hong-fang-tea has a minimum security level of 5
+---------- hong-fang-tea can have a maximum of $75000000
+--------------------------------------------------
+Working on harakiri-sushi
+---------- harakiri-sushi has a Growth Rate of 40
+---------- It takes 21.75216001432962 seconds to Grow
+---------- It takes 27.190200017912023 seconds to Weaken
+---------- It takes 6.797550004478006 seconds to Hack
+---------- harakiri-sushi has a minimum security level of 5
+---------- harakiri-sushi can have a maximum of $100000000
+--------------------------------------------------
+Working on neo-net
+---------- neo-net has a Growth Rate of 25
+---------- It takes 70.37806145300327 seconds to Grow
+---------- It takes 87.97257681625409 seconds to Weaken
+---------- It takes 21.993144204063523 seconds to Hack
+---------- neo-net has a minimum security level of 8
+---------- neo-net can have a maximum of $125000000
+--------------------------------------------------
+Working on CSEC
+---------- CSEC has a Growth Rate of 0
+---------- It takes 9.713046139208352 seconds to Grow
+---------- It takes 12.141307674010438 seconds to Weaken
+---------- It takes 3.03532691850261 seconds to Hack
+---------- CSEC has a minimum security level of 1
+---------- CSEC can have a maximum of $0
+--------------------------------------------------
+Working on zer0
+---------- zer0 has a Growth Rate of 40
+---------- It takes 100.71343276895294 seconds to Grow
+---------- It takes 125.89179096119119 seconds to Weaken
+---------- It takes 31.472947740297798 seconds to Hack
+---------- zer0 has a minimum security level of 8
+---------- zer0 can have a maximum of $187500000
+--------------------------------------------------
+Working on max-hardware
+---------- max-hardware has a Growth Rate of 30
+---------- It takes 67.95123174772729 seconds to Grow
+---------- It takes 84.93903968465912 seconds to Weaken
+---------- It takes 21.23475992116478 seconds to Hack
+---------- max-hardware has a minimum security level of 5
+---------- max-hardware can have a maximum of $250000000
+--------------------------------------------------
+Working on iron-gym
+---------- iron-gym has a Growth Rate of 20
+---------- It takes 60.74840118246818 seconds to Grow
+---------- It takes 75.93550147808523 seconds to Weaken
+---------- It takes 18.983875369521304 seconds to Hack
+---------- iron-gym has a minimum security level of 10
+---------- iron-gym can have a maximum of $500000000
+--------------------------------------------------
+Working on phantasy
+---------- phantasy has a Growth Rate of 35
+---------- It takes 72.82430579592143 seconds to Grow
+---------- It takes 91.03038224490179 seconds to Weaken
+---------- It takes 22.757595561225447 seconds to Hack
+---------- phantasy has a minimum security level of 7
+---------- phantasy can have a maximum of $600000000
+--------------------------------------------------
+Working on silver-helix
+---------- silver-helix has a Growth Rate of 30
+---------- It takes 342.35286652328176 seconds to Grow
+---------- It takes 427.9410831541022 seconds to Weaken
+---------- It takes 106.98527078852555 seconds to Hack
+---------- silver-helix has a minimum security level of 10
+---------- silver-helix can have a maximum of $1125000000
+--------------------------------------------------
+Working on omega-net
+---------- omega-net has a Growth Rate of 35
+---------- It takes 176.80541622643435 seconds to Grow
+---------- It takes 221.00677028304295 seconds to Weaken
+---------- It takes 55.25169257076074 seconds to Hack
+---------- omega-net has a minimum security level of 11
+---------- omega-net can have a maximum of $1656065900
+--------------------------------------------------
+Working on avmnite-02h
+---------- avmnite-02h has a Growth Rate of 0
+---------- It takes 9.707318821103899 seconds to Grow
+---------- It takes 12.134148526379873 seconds to Weaken
+---------- It takes 3.033537131594968 seconds to Hack
+---------- avmnite-02h has a minimum security level of 1
+---------- avmnite-02h can have a maximum of $0
+--------------------------------------------------
+Working on crush-fitness
+---------- crush-fitness has a Growth Rate of 31
+---------- It takes 511.3330189016479 seconds to Grow
+---------- It takes 639.1662736270598 seconds to Weaken
+---------- It takes 159.79156840676495 seconds to Hack
+---------- crush-fitness has a minimum security level of 13
+---------- crush-fitness can have a maximum of $1296535250
+--------------------------------------------------
+Working on johnson-ortho
+---------- johnson-ortho has a Growth Rate of 55
+---------- It takes 740.2801332973833 seconds to Grow
+---------- It takes 925.350166621729 seconds to Weaken
+---------- It takes 231.33754165543226 seconds to Hack
+---------- johnson-ortho has a minimum security level of 18
+---------- johnson-ortho can have a maximum of $2100394775
+--------------------------------------------------
+Working on the-hub
+---------- the-hub has a Growth Rate of 51
+---------- It takes 257.07018775235554 seconds to Grow
+---------- It takes 321.33773469044445 seconds to Weaken
+---------- It takes 80.33443367261111 seconds to Hack
+---------- the-hub has a minimum security level of 12
+---------- the-hub can have a maximum of $4462735175
+--------------------------------------------------
+********** DONE **********
