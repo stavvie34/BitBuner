@@ -15,12 +15,12 @@ for (i =0; i < 1000; i = i + 1) {
 	tprint('------------------------------');
 	
 	if ((wallet[i] - wallet[i - 1]) > 0) {
-		tprint('You have gained $' + (wallet[i] - wallet[i - 1]) + ' in the last 10 seconds.');
+		tprint('You have gained $' + (wallet[i] - wallet[i - 1]) + ' in the last 5 minutes.');
 	} else if ((wallet[i] - wallet[i - 1]) < 0) {
-		tprint('You have lost $' + (wallet[i] - wallet[i - 1]) + ' in the last 10 seconds.');
+		tprint('You have lost $' + (wallet[i] - wallet[i - 1]) + ' in the last 5 minutes.');
 	} else {
 		tprint('No growth or loss has occured.');
 	}
 	
-	sleep(10000);
+	sleep(300000);
 }
