@@ -1,0 +1,91 @@
+------------------------------
+
+RUN:
+
+1. hack-target.script -t MAX # of threads for RAM [foodnstuff]
+
+------------------------------
+
+TRAVEL:
+
+2. Buy ticket to Volhaven
+
+------------------------------
+
+PURCHASE:
+
+4. One 1 TB Server from OmniTek Incorporated
+
+5. 1 hacknet node
+
+------------------------------
+
+RUN:
+
+6. hacknet-test.script 
+	// REQUIRES: At least 1 hacknet node already bought
+    continually upgrades hacknet nodes
+	
+7. main-server.script
+	// REQUIRES: A fair amount of RAM. Helps a lot if you have a larger hack level
+	
+------------------------------
+
+PURCHASE:
+
+8. 24 more 1 TB servers from OmniTek Incorportated
+
+------------------------------
+
+9. all-server.script 
+	// REQUIRES: 25 purchased servers with name 'server0' through 'server24'
+	runs "main-script" on 25 purchased servers.
+	
+------------------------------
+
+OPTIONAL:
+
+10. Run - user-cash-log.script
+		keeps track of your money
+		
+		
+		
+		
+		
+-----
+What ended up happening:
+
+didn't have much money
+
+buy hacknet node
+run hacknet-test
+
+continually ran hack-target [foodnstuff    then more servers]
+on each of the beginning servers until there wasn't any more money on the server. Then I stopped and went to the next one.
+
+trying to get enough money for 1 TB servers. 
+
+eventually bought all 25 servers
+
+ran all-server.script
+
+now main-script is running on everything
+----
+
+start should be:
+
+buy a hacknet node.
+run hacknet-test
+
+run hack-target -t max # threads [!list of 1 port servers]
+	do this until the available cash = 0
+		then move onto next server
+			until end of server list
+
+!now you should have enough money to do stuff
+
+run buy-servers.script
+run all-server.script
+
+that's it
+
