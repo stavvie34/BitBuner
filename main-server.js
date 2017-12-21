@@ -1,6 +1,46 @@
+scanArray = ['foodnstuff', 'sigma-cosmetics', 'joesguns', 'nectar-net', 'hong-fang-tea', 'harakiri-sushi', 'neo-net', 'zer0', 'max-hardware', 'iron-gym', 'phantasy', 'silver-helix', 'omega-net', 'crush-fitness', 'johnson-ortho', 'the-hub', 'comptek', 'netlink', 'rothman-uni', 'catalyst', 'summit-uni', 'rho-construction', 'millenium-fitness', 'aevum-police', 'alpha-ent', 'syscore', 'lexo-corp', 'snap-fitness', 'global-pharm', 'applied-energetics', 'unitalife', 'nova-med', 'zb-def', 'zb-institute', 'vitalife', 'titan-labs', 'solaris', 'microdyne', 'helios', 'deltaone', 'icarus', 'zeud-med', 'omnia', 'defcomm', 'galactic-cyber', 'infocomm', 'taiyang-digital', 'stormtech', 'aerocorp', 'clarkeinc', 'omnitek', 'now', '4sigma', 'blade', 'b-and-a', 'ecorp', 'fulcrumtech', 'megacorp', 'kuai-gong', 'fulcrumassets', 'powerhouse-fitness'];
+
+
+/*
+function spider() {
+    // Return an array of all identifiable servers
+
+    // Create a serversSeen array, containing only 'home' for now
+    serversSeen = ['home'];
+
+    // For every server we've seen so far, do a scan
+    for (i = 0; i < serversSeen.length; i++) {
+        thisScan = scan(serversSeen[i]);
+        // Loop through results of the scan, and add any new servers
+        for (j = 0; j < thisScan.length; j++) {
+            // If this server isn't in serversSeen, add it
+            if (serversSeen.indexOf(thisScan[j]) === -1) {
+                serversSeen.push(thisScan[j]);
+            }
+        }
+    }
+    return serversSeen;
+}
+
+allServers = spider();
+
+*/
+
+for (i = 0; i < scanArray.length; i++) {
+    scp('main-server.script', scanArray[i]);
+	scp('RemoteGrow.script', scanArray[i]);
+	scp('RemoteHack.script', scanArray[i]);
+	scp('RemoteWeaken.script', scanArray[i]);
+	tprint('Scripts copied to ' + scanArray[i]);
+	
+	
+	exec('main-server.script', scanArray[i]);
+
+}
+
+
 //Define Variables
 currentScanLength = 0;
-scanArray = ['home'];
 Servers = [];
 ServersM = [];  // Money
 ServersHL = []; // HackingLevel
