@@ -1,6 +1,10 @@
 // Servers with 1 port
 SvrOnePort = ['foodnstuff', 'sigma-cosmetics', 'joesguns', 'nectar-net', 'hong-fang-tea', 'harakiri-sushi', 'neo-net', 'zer0', 'max-hardware', 'iron-gym'];
 
+purchaseHacknetNode();
+
+exec('hacknet-test.script', 'home');
+
 // Go through server list. If the server isn't being targeted, target it. If there is no more cash, kill the target script. Move on to the next server.
 for (i = 0; i < SvrOnePort.length; i = i + 1) {
 	targetOnePort = SvrOnePort[i];
