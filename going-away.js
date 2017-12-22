@@ -50,10 +50,12 @@ for (j = 0; j < svrs.length; j = j + 1) {
         sqlinject(currentSvr);
 
          nuke(currentSvr);
-}
+    }
 	
-	if (maxThreads >= 1) {
-		exec('base-target.script', currentSvr, maxThreads, currentSvr);	
+	if (hasRootAccess(currentSvr) === false) {
+	
+	} else if (maxThreads >= 1) {
+		exec('base-target.script', currentSvr, maxThreads, currentSvr) 
 	} else {
 	}
 }
