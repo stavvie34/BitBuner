@@ -1,3 +1,8 @@
+/*
+Only works if you have enough multipliers to the point where growing a server will increase your hack exp signficantly.
+*/
+
+
 //Servers with 1 port.
 SvrOnePort = ['foodnstuff', 'sigma-cosmetics', 'joesguns', 'nectar-net', 'hong-fang-tea', 'harakiri-sushi', 'neo-net', 'zer0', 'max-hardware', 'iron-gym'];
 
@@ -62,6 +67,22 @@ tprint('                                               ');
 tprint('///////////////////////////////////////////////');
 tprint('All servers have been hacked of all their cash.');
 tprint('///////////////////////////////////////////////');
+
+
+//Run the main server script on the home server
+exec('main-server', 'home');
+
+
+tprint('                            ');
+tprint('////////////////////////////');
+tprint('Running main script on home.');
+tprint('////////////////////////////');
+tprint('                                   ');
+tprint('///////////////////////////////////');
+tprint('Main script is now running on home.');
+tprint('///////////////////////////////////');
+
+
 tprint('                                               ');
 tprint('//////////////////////');
 tprint('Buying 1 TB servers...');
@@ -128,6 +149,7 @@ for (i = 0; i < scanArray.length; i++) {
 	tprint('Main server script is now running on ' + scanArray[i]);
 	tprint('////////////////////////////////////////////////////');	
 }
+
 
 
 tprint('                                   ');
