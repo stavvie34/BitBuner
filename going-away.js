@@ -37,6 +37,21 @@ for (j = 0; j < svrs.length; j = j + 1) {
 	
 	maxThreads = Math.floor((svrRam) / (scriptRam));
 	
+	if (hasRootAccess(currentSvr) === false) {
+         if (fileExists('BruteSSH.exe', 'home') === true)
+        brutessh(currentSvr);
+         if (fileExists('FTPCrack.exe', 'home') === true)
+        ftpcrack(currentSvr);
+         if (fileExists('relaysmtp.exe', 'home') === true)
+        relaysmtp(currentSvr);
+         if (fileExists('httpwork.exe', 'home') === true)
+        httpworm(currentSvr);
+         if (fileExists('sqlinject.exe', 'home') === true)
+        sqlinject(currentSvr);
+
+         nuke(currentSvr);
+}
+	
 	if (maxThreads >= 1) {
 		exec('base-target.script', currentSvr, maxThreads, currentSvr);	
 	} else {
