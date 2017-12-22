@@ -8,10 +8,7 @@ ServersHP = []; // HackingPorts
 ServersP = [];  // Profits
 basehackinglevel = -101;
 target = 'foodnstuff';
-
-
-hostSrvs = ['server0', 'server1', 'server2', 'server3', 'server4', 'server5', 'server6', 'server7', 'server8', 'server9', 'server10', 'server11', 'server12', 'server13', 'server14', 'server15', 'server16', 'server17', 'server18', 'server19', 'server20', 'server21', 'server22', 'server23', 'server24'];
-
+host = args[];
 mults = getHackingMultipliers();
 
 //Skill Multiplier Constants
@@ -112,17 +109,15 @@ while (true) {
 
     //Loop Through Targets
     for (k = 0; k < Math.min(OptimalTargetList.length,10); k++) {
-        
-		currentHost = hostSrvs[i];
-		currentHostRam = getServerRam(currentHost);
+        homeram = getServerRam('home');
 
-        if (currentHostRam[0] - currentHostRam[1] < 2) {
+        if (homeram[0] - homeram[1] < 2) {
             print('Not enough RAM available');
             k = 1000;
             break;
         }
 
-        freememory = currentHostRam[0] - currentHostRam[1];
+        freememory = homeram[0] - homeram[1];
         target = OptimalTargetList[k];
         minsecurity = OptimalTargetListMS[k];
         reqHack = OptimalTargetListHL[k];
@@ -171,13 +166,13 @@ while (true) {
             nuke(target);
         }
 
-        if (isRunning('RemoteWeaken.script',currentHost,target) == false && isRunning('RemoteHack.script',currentHost,target) == false  && isRunning('RemoteGrow.script',currentHost,target) == false) {
+        if (isRunning('RemoteWeaken.script',host,target) == false && isRunning('RemoteHack.script',host,target) == false  && isRunning('RemoteGrow.script',host,target) == false) {
             if (getServerSecurityLevel(target) > getServerBaseSecurityLevel(target) / 3 + 6) {
-                exec('RemoteWeaken.script', currentHost, weakens, target);
+                exec('RemoteWeaken.script', host, weakens, target);
             } else if (getServerMoneyAvailable(target) >= 0.75 * getServerMaxMoney(target)) {
-                exec('RemoteHack.script', currentHost, hacks, target);
+                exec('RemoteHack.script', host, hacks, target);
             } else {
-                exec('RemoteGrow.script', currentHost, grows, target);
+                exec('RemoteGrow.script', host, grows, target);
             }    
         }
     }
