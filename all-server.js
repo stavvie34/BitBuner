@@ -1,6 +1,8 @@
 pSrvs = ['server-0', 'server-1', 'server-2', 'server-3', 'server-4', 'server-5', 'server-6', 'server-7', 'server-8', 'server-9', 'server-10', 'server-11', 'server-12', 'server-13', 'server-14', 'server-15', 'server-16', 'server-17', 'server-18', 'server-19', 'server-20', 'server-21', 'server-22', 'server-23', 'server-24'];
 
-Srvs = ['foodnstuff', 'sigma-cosmetics', 'joesguns', 'nectar-net', 'hong-fang-tea', 'harakiri-sushi', 'neo-net', 'zer0', 'max-hardware', 'iron-gym', 'phantasy', 'silver-helix', 'omega-net', 'crush-fitness', 'johnson-ortho', 'the-hub', 'comptek', 'netlink', 'rothman-uni', 'catalyst', 'summit-uni', 'rho-construction', 'millenium-fitness', 'aevum-police', 'alpha-ent', 'syscore', 'lexo-corp', 'snap-fitness', 'global-pharm', 'applied-energetics', 'unitalife', 'nova-med', 'zb-def', 'zb-institute', 'vitalife', 'titan-labs', 'solaris', 'microdyne', 'helios', 'deltaone', 'icarus', 'omnia', 'defcomm', 'galactic-cyber', 'infocomm', 'taiyang-digital', 'stormtech', 'aerocorp', 'clarkeinc', 'omnitek', '4sigma', 'blade', 'b-and-a', 'ecorp', 'fulcrumtech', 'megacorp', 'kuai-gong', 'fulcrumassets', 'powerhouse-fitness'];
+// Srvs = ['foodnstuff', 'sigma-cosmetics', 'joesguns', 'nectar-net', 'hong-fang-tea', 'harakiri-sushi', 'neo-net', 'zer0', 'max-hardware', 'iron-gym', 'phantasy', 'silver-helix', 'omega-net', 'crush-fitness', 'johnson-ortho', 'the-hub', 'comptek', 'netlink', 'rothman-uni', 'catalyst', 'summit-uni', 'rho-construction', 'millenium-fitness', 'aevum-police', 'alpha-ent', 'syscore', 'lexo-corp', 'snap-fitness', 'global-pharm', 'applied-energetics', 'unitalife', 'nova-med', 'zb-def', 'zb-institute', 'vitalife', 'titan-labs', 'solaris', 'microdyne', 'helios', 'deltaone', 'icarus', 'omnia', 'defcomm', 'galactic-cyber', 'infocomm', 'taiyang-digital', 'stormtech', 'aerocorp', 'clarkeinc', 'omnitek', '4sigma', 'blade', 'b-and-a', 'ecorp', 'fulcrumtech', 'megacorp', 'kuai-gong', 'fulcrumassets', 'powerhouse-fitness'];
+
+Srvs = ['neo-net', 'zer0', 'max-hardware', 'iron-gym', 'phantasy', 'silver-helix', 'omega-net', 'unitalife', 'vitalife', 'titan-labs', 'fulcrumtech'];
 
 
 tprint('////////////////////////////////////////');
@@ -15,7 +17,7 @@ for (i = 0; i < Srvs.length; i = i + 1) {
 	portBusters = ['BruteSSH.exe', 'FTPCrack.exe', 'relaySMTP.exe', 'HTTPWorm.exe', 'SQLInject.exe'];
     numPortBreakers = 0;
 	currentSrvAvailableRam = ((getServerRam(currentSrv)[0]) - (getServerRam(currentSrv)[1]));
-	reqScriptRam = (getScriptRam('main-script-other-servers.script', 'home'));
+	reqScriptRam = (getScriptRam('base-target.script', 'home'));
 	
 	
     for (j = 0; j < portBusters.length; j++) {
@@ -43,17 +45,13 @@ for (i = 0; i < Srvs.length; i = i + 1) {
 		} else {
 			tprint('Successfuly gained root access on ' + currentSrv);
 
-			scp('main-script-other-servers.script', currentSrv);
-			scp('RemoteGrow.script', currentSrv);
-			scp('RemoteHack.script', currentSrv);
-			scp('RemoteWeaken.script', currentSrv);
-			tprint('Scripts copied to ' + currentSrv);
+			scp('base-target.script', currentSrv);
 
-			exec('main-script-other-servers.script', currentSrv, 1, currentSrv);
+			exec('base-target.script', currentSrv, 1, currentSrv);
 
 			//If the main-server script is running on the server
-			if ((isRunning('main-script-other-servers.script', currentSrv, currentSrv)) === true) {
-				tprint(currentSrv + ' is now runnning main-script-other-servers.script');
+			if ((isRunning('base-target.script', currentSrv, currentSrv)) === true) {
+				tprint(currentSrv + ' is now runnning base-target.script');
 				tprint('------------------------------');
 			} else {
 				tprint('There was an error, and the script is not running on ' + currentSrv);
@@ -77,7 +75,7 @@ for (i = 0; i < Srvs.length; i = i + 1) {
 	
 
 tprint('///////////////////////////////////////////////////////////////////////');
-tprint('---------- Successfully ran main script on all servers ----------');
+tprint('---------- Successfully ran base script on all servers ----------');
 tprint('///////////////////////////////////////////////////////////////////////');
 tprint(' ');
 tprint('//////////////////////////////////////////////////////');
@@ -89,17 +87,13 @@ for (j = 0; j < pSrvs.length; j = j + 1) {
 	currentPSrv = pSrvs[j];
 	targetSrv = Srvs[j];
 
-	scp('main-script-other-servers.script', currentPSrv);
-	scp('RemoteGrow.script', currentPSrv);
-	scp('RemoteHack.script', currentPSrv);
-	scp('RemoteWeaken.script', currentPSrv);
-	tprint('Scripts copied to ' + currentPSrv);
+	scp('base-target.script', currentPSrv);
 
-	exec('main-script-other-servers.script', currentPSrv, 1, targetSrv);
+	exec('base-target.script', currentPSrv, 1, targetSrv);
 
 	//If the main-server script is running on the server
-	if ((isRunning('main-script-other-servers.script', currentPSrv, targetSrv)) === true) {
-		tprint(currentPSrv + ' is now runnning main-script-other-servers.script');
+	if ((isRunning('base-target.script', currentPSrv, targetSrv)) === true) {
+		tprint(currentPSrv + ' is now runnning base-target.script');
 		tprint('------------------------------');
 	} else {
 		tprint('There was an error, and the script is not running on ' + currentPSrv);
@@ -109,7 +103,7 @@ for (j = 0; j < pSrvs.length; j = j + 1) {
 
 
 tprint('///////////////////////////////////////////////////////////////////////////');
-tprint('---------- Successfully ran main script on all purchased servers ----------');
+tprint('---------- Successfully ran base script on all purchased servers ----------');
 tprint('///////////////////////////////////////////////////////////////////////////');
 tprint(' ');
 tprint('///////////////////////////////////');
