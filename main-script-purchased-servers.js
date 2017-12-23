@@ -8,7 +8,7 @@ ServersHP = []; // HackingPorts
 ServersP = [];  // Profits
 basehackinglevel = -101;
 target = 'foodnstuff';
-host = args[];
+host = args[0];
 mults = getHackingMultipliers();
 
 //Skill Multiplier Constants
@@ -109,7 +109,7 @@ while (true) {
 
     //Loop Through Targets
     for (k = 0; k < Math.min(OptimalTargetList.length,10); k++) {
-        homeram = getServerRam('home');
+        homeram = getServerRam(host);
 
         if (homeram[0] - homeram[1] < 2) {
             print('Not enough RAM available');
