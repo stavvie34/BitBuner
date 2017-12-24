@@ -11,8 +11,8 @@ scanArray = ['foodnstuff', 'sigma-cosmetics', 'joesguns', 'nectar-net', 'hong-fa
 
 tprint('//////////////////////////////////');
 tprint('          Starting Up...          ');
-tprint('//////////////////////////////////');
-tprint('                                  ');
+
+/*
 tprint('//////////////////////////');
 tprint('Purchasing Hacknet node...');
 tprint('//////////////////////////');
@@ -32,10 +32,15 @@ tprint('//////////////////////////////////////');
 exec('hacknet-test.script', 'home');
 
 
+
+
 tprint('                              ');
 tprint('//////////////////////////////');
 tprint('Hacknet script is now running.');
 tprint('//////////////////////////////');
+
+*/
+
 tprint('                              ');
 tprint('///////////////////////////////////////////////////');
 tprint('Hacking all cash available on all 1 port servers...');
