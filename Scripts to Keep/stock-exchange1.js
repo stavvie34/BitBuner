@@ -67,7 +67,7 @@ while (true){
                         money = (getServerMoneyAvailable("home") * 0.15); //Only use 15% of cash to buy stock
                         shareAmount = Math.floor(money / stockPrice);
                         //I buy the stock and save the buying price on position1 of the array
-                        tprint('Investing ' + money + " on " + shareAmount + " shares of " + symbols[i][0]);
+                        print('Investing ' + money + " on " + shareAmount + " shares of " + symbols[i][0]);
                         buyStock(symbols[i][0], shareAmount);
                         symbols[i][1] = stockPrice;
                         symbols[i][2] = symbols[i][2] + 1;
@@ -88,7 +88,7 @@ while (true){
                 //If the price is met i sell every stock but the 1 for the average
                 if (stockPrice > sellThresh){
                     sellAmount = pos[0] - 1;
-                    tprint('Selling all shares (' + pos[0] + ') of ' + symbols[i][0]);
+                    print('Selling all shares (' + pos[0] + ') of ' + symbols[i][0]);
                     sellStock(symbols[i][0], sellAmount);
                     symbols[i][2] = 0;
                 }
