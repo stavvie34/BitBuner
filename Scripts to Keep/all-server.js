@@ -147,7 +147,7 @@ if (prompt('Are you sure you want to execute ' + script + ' on all servers to at
 					//Start at the max number of possible servers you can buy. Keep buying until that number is 0. 
 					for (i = maxPossibleServers; i > 0; i = i - 1) {
 						purchasedServersArray = getPurchasedServers();
-						j = purchasedServersArray.length
+						j = purchasedServersArray.length;
 						currentPurchasedServer = ('server-' + (j + 1));
 						purchaseServer(currentPurchasedServer, 1024);
 						tprint('Purchased a server and named it ' + currentPurchasedServer + '.');
