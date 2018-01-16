@@ -310,7 +310,7 @@ if (prompt('Are you sure you want to execute ' + script + ' on all servers to at
 		//limitServers = (25 - currentPurchasedServers.length);
 		//maxPossibleServers = Math.min(moneyPossibleServers, limitServers);	
 
-		for (i = 1; i < currentPurchasedServers.length; i = i + 1) {
+		for (i = 1; i < (currentPurchasedServers.length + 1); i = i + 1) {
 			currentPurchasedServer = ('server-' + i);
 			//purchaseServer(currentPurchasedServer, 1024);
 			//tprint('Purchased a server and named it ' + currentPurchasedServer + '.');
