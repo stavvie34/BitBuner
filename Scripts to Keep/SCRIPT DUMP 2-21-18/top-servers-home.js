@@ -1,4 +1,6 @@
+// topServers = ['foodnstuff', 'sigma-cosmetics', 'joesguns', 'hong-fang-tea', 'harakiri-sushi'];
 topServers = ['clarkeinc', 'b-and-a', '4sigma', 'megacorp', 'ecorp', 'omnitek', 'kuai-gong', 'blade', 'nwo'];
+// topServers = ['the-hub', 'rho-construction', 'phantasy', 'omega-net'];
 script = 'base-target.script';
 scriptRam = getScriptRam(script, 'home');
 maxHomeRam = getServerRam('home')[0];
