@@ -15,13 +15,12 @@ numPortsRequiredTarget = (getServerNumPortsRequired(target));
 hackingLevelRequiredTarget = (getServerRequiredHackingLevel(target));
 userHackingLevel = (getHackingLevel());
 
-//If you don't have a high enough hacking level
-if (userHackingLevel < hackingLevelRequiredTarget) {
-	tprint('You do not have a high enough hacking level for ' + target + '.');
-} else {
-	//Need to have root access to target in order to do anything
-	//REQUIRES THAT YOU DIDN'T SKIP THE ORDER IN GETTING PORT BUSTERS
-	//Add port busters to array
+
+///////////////
+// Functions //
+///////////////
+
+function findPortBusters() {
 	if (fileExists('brutessh.exe', 'home') === true) {
 		portBusters.push('brutessh.exe');
 		tprint('You own BruteSSH.exe');
@@ -46,6 +45,65 @@ if (userHackingLevel < hackingLevelRequiredTarget) {
 		portBusters.push('sqlinject.exe');
 		tprint('You own SQLInject.exe');
 	}
+}
+
+
+function openSesame(target) {
+	if ((portBusters.length) === 1) {
+		brutessh(target);
+		tprint('Opened port with BruteSSH.');
+	}
+
+	if ((portBusters.length) === 2) {
+		brutessh(target);
+		tprint('Opened port with BruteSSH.');
+		ftpcrack(target);
+		tprint('Opened port with FTPCrack.');
+	}
+
+	if ((portBusters.length) === 3) {
+		brutessh(target);
+		tprint('Opened port with BruteSSH.');
+		ftpcrack(target);
+		tprint('Opened port with FTPCrack.');
+		relaysmtp(target);
+		tprint('Opened port with relaySMTP.');
+	}
+
+	if ((portBusters.length) === 4) {
+		brutessh(target);
+		tprint('Opened port with BruteSSH.');
+		ftpcrack(target);
+		tprint('Opened port with FTPCrack.');
+		relaysmtp(target);
+		tprint('Opened port with relaySMTP.');
+		httpworm(target);
+		tprint('Opened port with HTTPWorm.');
+	}
+
+	if ((portBusters.length) === 5) {
+		brutessh(target);
+		tprint('Opened port with BruteSSH.');
+		ftpcrack(target);
+		tprint('Opened port with FTPCrack.');
+		relaysmtp(target);
+		tprint('Opened port with relaySMTP.');
+		httpworm(target);
+		tprint('Opened port with HTTPWorm.');
+		sqlinject(target);
+		tprint('Opened port with SQLInject.');
+	}
+
+	nuke(target);
+}
+
+
+//If you don't have a high enough hacking level
+if (userHackingLevel < hackingLevelRequiredTarget) {
+	tprint('You do not have a high enough hacking level for ' + target + '.');
+} else {
+	
+	findPortBusters();	
 
 	//You already have root access
 	if ((hasRootAccess(target)) === true) {
@@ -57,52 +115,7 @@ if (userHackingLevel < hackingLevelRequiredTarget) {
 			tprint('Moving on to next server.');
 		} else {
 			//Opening ports
-			if ((portBusters.length) === 1) {
-				brutessh(target);
-				tprint('Opened port with BruteSSH.');
-			}
-
-			if ((portBusters.length) === 2) {
-				brutessh(target);
-				tprint('Opened port with BruteSSH.');
-				ftpcrack(target);
-				tprint('Opened port with FTPCrack.');
-			}
-
-			if ((portBusters.length) === 3) {
-				brutessh(target);
-				tprint('Opened port with BruteSSH.');
-				ftpcrack(target);
-				tprint('Opened port with FTPCrack.');
-				relaysmtp(target);
-				tprint('Opened port with relaySMTP.');
-			}
-
-			if ((portBusters.length) === 4) {
-				brutessh(target);
-				tprint('Opened port with BruteSSH.');
-				ftpcrack(target);
-				tprint('Opened port with FTPCrack.');
-				relaysmtp(target);
-				tprint('Opened port with relaySMTP.');
-				httpworm(target);
-				tprint('Opened port with HTTPWorm.');
-			}
-
-			if ((portBusters.length) === 5) {
-				brutessh(target);
-				tprint('Opened port with BruteSSH.');
-				ftpcrack(target);
-				tprint('Opened port with FTPCrack.');
-				relaysmtp(target);
-				tprint('Opened port with relaySMTP.');
-				httpworm(target);
-				tprint('Opened port with HTTPWorm.');
-				sqlinject(target);
-				tprint('Opened port with SQLInject.');
-			}
-
-			nuke(target);
+			openSesame(target);
 			tprint('You now have root access to ' + target + '.');
 		}
 	}
@@ -114,15 +127,6 @@ maxThreads = (Math.floor((totalRam - usedRam) / (scriptRam)));
 
 exec(script, 'home', maxThreads, target);
 tprint('Script is now running on your home machine.');
-/*
-nuke('foodnstuff');
-killall('foodnstuff');
-scp('sleeper.script', 'foodnstuff');
-sleep(5000);
-exec('sleeper.script', 'foodnstuff', 1, script, target);
-tprint('Sleeper script is now running on foodnstuff.');
-*/
-
 
 tprint('////////////////////////////////////////');
 tprint('---------- Working on Servers ----------');
@@ -157,52 +161,7 @@ for (i = 0; i < servers.length; i = i + 1) {
 				tprint('Moving on to next server.');
 			} else {
 				//Opening ports
-				if ((portBusters.length) === 1) {
-					brutessh(currentServer);
-					tprint('Opened port with BruteSSH.');
-				}
-
-				if ((portBusters.length) === 2) {
-					brutessh(currentServer);
-					tprint('Opened port with BruteSSH.');
-					ftpcrack(currentServer);
-					tprint('Opened port with FTPCrack.');
-				}
-
-				if ((portBusters.length) === 3) {
-					brutessh(currentServer);
-					tprint('Opened port with BruteSSH.');
-					ftpcrack(currentServer);
-					tprint('Opened port with FTPCrack.');
-					relaysmtp(currentServer);
-					tprint('Opened port with relaySMTP.');
-				}
-
-				if ((portBusters.length) === 4) {
-					brutessh(currentServer);
-					tprint('Opened port with BruteSSH.');
-					ftpcrack(currentServer);
-					tprint('Opened port with FTPCrack.');
-					relaysmtp(currentServer);
-					tprint('Opened port with relaySMTP.');
-					httpworm(currentServer);
-					tprint('Opened port with HTTPWorm.');
-				}
-
-				if ((portBusters.length) === 5) {
-					brutessh(currentServer);
-					tprint('Opened port with BruteSSH.');
-					ftpcrack(currentServer);
-					tprint('Opened port with FTPCrack.');
-					relaysmtp(currentServer);
-					tprint('Opened port with relaySMTP.');
-					httpworm(currentServer);
-					tprint('Opened port with HTTPWorm.');
-					sqlinject(currentServer);
-					tprint('Opened port with SQLInject.');
-				}
-
-				nuke(currentServer);
+				openSesame(target);
 				tprint('You now have root access to ' + currentServer + '.');
 			}
 		}
